@@ -12,6 +12,7 @@ with open('lib_bahnar\\bahnar_lexicon.txt','r',encoding='utf-8') as f:
     words = f.readlines()
     for word in words:
         tok = word.split('\t')[0]
+        tok = tok.replace('\n','')
         one_bahnar.add(tok)
     
 #phase process all other file:
@@ -22,9 +23,10 @@ for d_file in ['lib_bahnar\\bahnar_ba.txt','lib_bahnar\\birlist_bahnar.txt']:
         for word in words:
             token = word.split(' ')
             for tok in token:
+                tok = tok.replace('\n','')
                 one_bahnar.add(tok)
             for i in range(1,len(token)):
-                second_bahnar.add(token[i - 1] + ' ' + token[i])
+                second_bahnar.add(token[i - 1].replace('\n','') + ' ' + token[i].replace('\n',''))
 
 one_bahnar = list(one_bahnar)
 second_bahnar = list(second_bahnar)

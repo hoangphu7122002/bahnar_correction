@@ -5,7 +5,6 @@ import json
 
 data_path = "lib_vi/"
 data_files = glob.glob(data_path + '*.txt')
-print(data_files)
 
 data_files = reversed(data_files)
 
@@ -21,17 +20,17 @@ for d_file in data_files:
         if len(word_lst) == 0:
             continue
         if len(word_lst) == 1:
-            one_vi.add(word[0])
+            one_vi.add(word[0].replace('\n',''))
         elif len(word_lst) == 2:
-            second_vi.add(word)
-            one_vi.add(word_lst[0])
-            one_vi.add(word_lst[1])
+            second_vi.add(word.replace('\n',''))
+            one_vi.add(word_lst[0].replace('\n',''))
+            one_vi.add(word_lst[1].replace('\n',''))
         elif len(word_lst) >= 3:
-            upper_vi.add(word)
+            upper_vi.add(word.replace('\n',''))
             for w in word_lst:
-                one_vi.add(w)
+                one_vi.add(w.replace('\n',''))
             for i in range(1,len(word_lst)):
-                second_vi.add(word_lst[i - 1] + ' ' + word_lst[i])
+                second_vi.add(word_lst[i - 1].replace('\n','') + ' ' + word_lst[i].replace('\n',''))
     
 one_vi = list(one_vi)
 second_vi = list(second_vi)
