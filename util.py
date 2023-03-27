@@ -119,7 +119,7 @@ def find_fix_ele(lst1,lst2,tok=''):
         if tok != '': 
             if check_replace(tok):
                 return secrets.choice(lst1 + lst2)
-            return tok
+        return tok
     return secrets.choice(candidate)
     
 #dau cau
