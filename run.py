@@ -1,7 +1,12 @@
 import docx
 from util import *
+import time
 
-doc = docx.Document('Pages from Diong Sen Gren 1-150.pdf.docx')
+name = 'Ho7mon bahnar.docx'
+
+st = time.time()
+
+doc = docx.Document(name)
 all_paras = doc.paragraphs
 
 mydoc = docx.Document()
@@ -36,5 +41,9 @@ for line in line_with_type:
         lines.append(process_vi(str_line) + '.')
     else:
         lines.append(process_bahnar(str_line) + '.')
-with open('a.docx', 'w', encoding='utf-8') as f:
+with open('correct_' + name, 'w', encoding='utf-8') as f:
     f.writelines(lines) 
+
+et = time.time()
+elapsed_time = et - st
+print(elapsed_time)
