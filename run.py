@@ -6,7 +6,7 @@ name = 'Pages from Diong Sen Gren 151-348.pdf.docx'
 
 st = time.time()
 
-doc = docx.Document(name)
+doc = docx.Document('document/' + name)
 all_paras = doc.paragraphs
 
 mydoc = docx.Document()
@@ -41,7 +41,7 @@ for line in line_with_type:
         lines.append(process_vi(str_line) + '.')
     else:
         lines.append(process_bahnar(str_line) + '.')
-with open('correct_' + name, 'w', encoding='utf-8') as f:
+with open('res/correct_' + name, 'w', encoding='utf-8') as f:
     f.writelines(lines) 
 
 et = time.time()
