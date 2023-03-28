@@ -2,7 +2,7 @@ import docx
 from util import *
 import time
 
-name = 'Pages from Diong Sen Gren 151-348.pdf.docx'
+name = 'Kuol lom bri.docx'
 
 st = time.time()
 
@@ -41,7 +41,7 @@ for line in line_with_type:
         lines.append(process_vi(str_line) + '.')
     else:
         lines.append(process_bahnar(str_line) + '.')
-with open('res/correct_' + name, 'w', encoding='utf-8') as f:
+with open('correct_' + name, 'w', encoding='utf-8') as f:
     f.writelines(lines) 
 
 et = time.time()
