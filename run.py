@@ -2,7 +2,7 @@ import docx
 from util import *
 import time
 
-name = 'Kuol lom bri.docx'
+name = 'caudo BAHNAR.docx'
 
 st = time.time()
 
